@@ -1,0 +1,69 @@
+/* 
+    Author     : Lorenzo Tomasetti
+*/
+textarea {
+   resize: none; /* per evitare problmei con la ridimensione della textarea da parte dell'utente */
+}
+body { 
+    padding-top: 70px; /*Fatto per evitare che la static navbar dia problemi con il bredcum*/
+}
+
+.bg-home-page {
+  /* Classe per lo sfondo della pèagina principale*/
+  background-image: url("../img/home.jpg");
+
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header-sezione {
+    text-align: center;
+    border-bottom: 2px solid #999999;
+    margin-bottom: 2em;
+}
+/** per il notice **/
+.notice {
+    padding: 15px;
+    background-color: #fafafa;
+    border-left: 6px solid #7f7f84;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+.notice-sm {
+    padding: 10px;
+    font-size: 80%;
+}
+.notice-lg {
+    padding: 35px;
+    font-size: large;
+}
+.notice-success {
+    border-color: #80D651;
+}
+.notice-success>strong {
+    color: #80D651;
+}
+.notice-info {
+    border-color: #45ABCD;
+}
+.notice-info>strong {
+    color: #45ABCD;
+}
+.notice-warning {
+    border-color: #FEAF20;
+}
+.notice-warning strong {
+    color: #FEAF20;
+}
+.notice-danger {
+    border-color: #d73814;
+}
+.notice-danger>strong {
+    color: #d73814;
+}
