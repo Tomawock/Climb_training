@@ -574,6 +574,49 @@ class DataLayer {
 
         mysqli_close($connection);
     }
+    
+    public function getUserTrainingProgramExecutionByUserId($idUsr){
+        $connection = $this->db_connect();
+        $sql = "SELECT * FROM `user_trainingprogram_execution` WHERE `id_user`=".$idUsr. " ORDER BY date";
+        
+        $risposta= mysqli_query($connection, $sql) or die('Errore nella query: ' . $sql . '\n' . mysqli_error());
+
+        mysqli_close($connection);
+        
+        $execution = array();
+        while ($riga = mysqli_fetch_array($risposta)) {
+            
+            $execution[]= array('id'=>$riga['id'],
+                    'executed'=>$this->findCompleteExerciseById($riga['id_exercise']),
+                    'tp'=>$this->findCompleteTrainingProgramById($riga['id_trainingProgram']),
+                    'reps'=>$riga['reps'],
+                    'sets'=>$riga['sets'],
+                    'date'=>$riga['date'],
+                    'note'=>$riga['note']);        
+        }
+        return $execution;
+    }
+    
+    public function getUserTrainingProgramExecutionByUserIdDateAndTrainingProgram($idUsr,$date,$trainingProgram){
+        $connection = $this->db_connect();
+        $sql = "SELECT * FROM `user_trainingprogram_execution` WHERE `id_user`=".$idUsr. " AND `date`='".$date."' AND `id_trainingProgram`=".$trainingProgram;
+        
+        $risposta= mysqli_query($connection, $sql) or die('Errore nella query: ' . $sql . '\n' . mysqli_error());
+
+        mysqli_close($connection);
+        
+        $execution = array();
+        while ($riga = mysqli_fetch_array($risposta)) {      
+            $execution[]= array('id'=>$riga['id'],
+                    'executed'=>$this->findCompleteExerciseById($riga['id_exercise']),
+                    'tp'=>$this->findCompleteTrainingProgramById($riga['id_trainingProgram']),
+                    'reps'=>$riga['reps'],
+                    'sets'=>$riga['sets'],
+                    'date'=>$riga['date'],
+                    'note'=>$riga['note']);        
+        }
+        return $execution;
+    }
 }
 ?>
 

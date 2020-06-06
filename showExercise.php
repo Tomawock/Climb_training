@@ -52,38 +52,40 @@ if (isset($_GET['id'])) {
                         <div class="panel-heading text-center panel-relative"><h2 class="panel-title"><strong>Exercise Details</strong></h2></div>
                         <!-- Table -->
                         <div class="col-md-12 col-xs-12">
-                            <table class="table table-responsive text-center">
-                                <thead>
-                                    <tr>
-                                        <th class="col-md-1 text-center">Reps</th>
-                                        <th class="col-md-1 text-center">Sets</th>
-                                        <th class="col-md-2 text-center">Rest</th>                                       
-                                        <th class="col-md-1 text-center">Overweight</th>
-                                        <th class="col-md-1 text-center">Unit</th>
-                                        <th class="col-md-3 text-center">Tags</th>
-                                        <th class="col-md-3 text-center">Tools</th>
-                                    </tr>
-                                </thead>
+                            <div  class="table-responsive">
+                                <table class="table table-responsive text-center">
+                                    <thead>
+                                        <tr>
+                                            <th class="col-md-1 text-center">Reps</th>
+                                            <th class="col-md-1 text-center">Sets</th>
+                                            <th class="col-md-2 text-center">Rest</th>                                       
+                                            <th class="col-md-1 text-center">Overweight</th>
+                                            <th class="col-md-1 text-center">Unit</th>
+                                            <th class="col-md-3 text-center">Tags</th>
+                                            <th class="col-md-3 text-center">Tools</th>
+                                        </tr>
+                                    </thead>
 
-                                <tbody>
-                                    <?php
-                                    echo '<tr class="success">';
-                                    echo '<td>' . $exercise->getRepsMin() . ' - ' . $exercise->getRepsMax() . '</td>';
-                                    echo '<td>' . $exercise->getSetMin() . ' - ' . $exercise->getSetMax() . '</td>';
-                                    echo '<td>' . $exercise->getRestMin() . ' - ' . $exercise->getRestMax() . '</td>';
-                                    echo '<td>' . $exercise->getOverweightMin() . ' - ' . $exercise->getOverweightMax() . '</td>';
-                                    echo '<td>' . $exercise->getOverweightUnit() . '</td>';
-                                    echo '<td> TODO TAGS </td>';
-                                    $result = "";
-                                    foreach ($exerciseTools as $tool) {
-                                        $result .= $tool->getName();
-                                        $result .= ' ';
-                                    }
-                                    echo '<td>' . $result . '</td>';
-                                    echo '</tr>';
-                                    ?>
-                                </tbody>
-                            </table>
+                                    <tbody>
+                                        <?php
+                                        echo '<tr class="success">';
+                                        echo '<td>' . $exercise->getRepsMin() . ' - ' . $exercise->getRepsMax() . '</td>';
+                                        echo '<td>' . $exercise->getSetMin() . ' - ' . $exercise->getSetMax() . '</td>';
+                                        echo '<td>' . $exercise->getRestMin() . ' - ' . $exercise->getRestMax() . '</td>';
+                                        echo '<td>' . $exercise->getOverweightMin() . ' - ' . $exercise->getOverweightMax() . '</td>';
+                                        echo '<td>' . $exercise->getOverweightUnit() . '</td>';
+                                        echo '<td> TODO TAGS </td>';
+                                        $result = "";
+                                        foreach ($exerciseTools as $tool) {
+                                            $result .= $tool->getName();
+                                            $result .= ' ';
+                                        }
+                                        echo '<td>' . $result . '</td>';
+                                        echo '</tr>';
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

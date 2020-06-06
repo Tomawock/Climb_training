@@ -91,7 +91,6 @@ if (isset($_GET['id'])) {
                                                 <th class="col-md-1 text-center">Tools</th>
                                                 <th class="col-md-1 text-center">Reps Done</th>
                                                 <th class="col-md-1 text-center">Sets Done</th>
-
                                             </tr>
                                         </thead>
 
